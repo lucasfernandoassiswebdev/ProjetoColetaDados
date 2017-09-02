@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apresentacao", "0 - Apresentacao", "{0ECA6577-B065-4E36-AAB6-3004A7F61480}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Aplicacao", "1 - Aplicacao", "{35684DCA-F0F8-40FA-97EC-BBACAA940A53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Dominio", "2 - Dominio", "{19C1B541-1EBE-473A-8478-73B50F198BAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{3C86D0FC-6B88-4D12-B415-21CEEB7C6D89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - Data", "3.1 - Data", "{429F20CB-40B7-4A6C-9B8E-EC7BBDBF9E96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coleta.Dominio", "Coleta.Dominio\Coleta.Dominio.csproj", "{E7110864-70CC-420D-8AAD-112CFC9E47EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coleta.Web", "Coleta.Web\Coleta.Web.csproj", "{CF6955F5-6BF7-4BA3-A6FD-1D7CF643E9CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1.1 - Repositorios", "3.1.1 - Repositorios", "{2772A2CA-A720-4352-BF2C-650424354003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coleta.Repositorios", "Coleta.Repositorios\Coleta.Repositorios.csproj", "{70F4321C-F0F8-46FF-BC29-4AE16774EBA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coleta.Aplicacao", "Coleta.Aplicacao\Coleta.Aplicacao.csproj", "{B34C82E8-E05C-400E-810C-406CF5B23175}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7110864-70CC-420D-8AAD-112CFC9E47EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7110864-70CC-420D-8AAD-112CFC9E47EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7110864-70CC-420D-8AAD-112CFC9E47EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7110864-70CC-420D-8AAD-112CFC9E47EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF6955F5-6BF7-4BA3-A6FD-1D7CF643E9CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF6955F5-6BF7-4BA3-A6FD-1D7CF643E9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF6955F5-6BF7-4BA3-A6FD-1D7CF643E9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF6955F5-6BF7-4BA3-A6FD-1D7CF643E9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F4321C-F0F8-46FF-BC29-4AE16774EBA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F4321C-F0F8-46FF-BC29-4AE16774EBA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F4321C-F0F8-46FF-BC29-4AE16774EBA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F4321C-F0F8-46FF-BC29-4AE16774EBA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B34C82E8-E05C-400E-810C-406CF5B23175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34C82E8-E05C-400E-810C-406CF5B23175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34C82E8-E05C-400E-810C-406CF5B23175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34C82E8-E05C-400E-810C-406CF5B23175}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{429F20CB-40B7-4A6C-9B8E-EC7BBDBF9E96} = {3C86D0FC-6B88-4D12-B415-21CEEB7C6D89}
+		{E7110864-70CC-420D-8AAD-112CFC9E47EF} = {19C1B541-1EBE-473A-8478-73B50F198BAE}
+		{CF6955F5-6BF7-4BA3-A6FD-1D7CF643E9CC} = {0ECA6577-B065-4E36-AAB6-3004A7F61480}
+		{2772A2CA-A720-4352-BF2C-650424354003} = {429F20CB-40B7-4A6C-9B8E-EC7BBDBF9E96}
+		{70F4321C-F0F8-46FF-BC29-4AE16774EBA1} = {2772A2CA-A720-4352-BF2C-650424354003}
+		{B34C82E8-E05C-400E-810C-406CF5B23175} = {35684DCA-F0F8-40FA-97EC-BBACAA940A53}
+	EndGlobalSection
+EndGlobal
