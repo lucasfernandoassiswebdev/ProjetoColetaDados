@@ -1,0 +1,175 @@
+﻿@model IEnumerable<Coleta.Dominio.Entidades.Aluno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dados da coleta inicial </h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carimbo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deficiencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoCivil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Filhos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Locomocao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SituacaoDomiciliar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TempoMoradia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoraCom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trabalha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MediaRenda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PeriodoEstudo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PessoasResidem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PessoasTrabalham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SomaRendas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PeriodoTrabalho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VidaEscolar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConhecimentoInformatica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotivoVestibular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConhecimentoLingua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Linguas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carimbo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deficiencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoCivil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Filhos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Locomocao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SituacaoDomiciliar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TempoMoradia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoraCom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trabalha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MediaRenda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PeriodoEstudo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PessoasResidem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PessoasTrabalham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SomaRendas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PeriodoTrabalho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VidaEscolar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConhecimentoInformatica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotivoVestibular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConhecimentoLingua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Linguas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meio)
+        </td>
+    </tr>
+}
+
+</table>

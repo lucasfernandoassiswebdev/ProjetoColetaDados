@@ -30,7 +30,7 @@
 
         public string Trabalha { get; set; }
 
-        public int MeriaRenda { get; set; }
+        public int MediaRenda { get; set; }
 
         public string PeriodoEstudo { get; set; }
 

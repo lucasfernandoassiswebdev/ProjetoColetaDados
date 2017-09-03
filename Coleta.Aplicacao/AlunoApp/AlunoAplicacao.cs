@@ -1,14 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using Coleta.Dominio.Entidades;
+using Coleta.Dominio.Interfaces;
 
 namespace Coleta.Aplicacao.AlunoApp
 {
     public class AlunoAplicacao : IAlunoAplicacao
     {
+        private readonly IAlunoRepositorio _appAlunos;
+
+        public AlunoAplicacao(IAlunoRepositorio alunos)
+        {
+            _appAlunos = alunos;
+        }
+
         public IEnumerable<Aluno> ExibeDados()
         {
-            throw new NotImplementedException();
+            return _appAlunos.ExibeDados();
+        }
+
+        public void InsereAluno(Aluno aluno)
+        {
+            _appAlunos.InsereAluno(aluno);
         }
 
         public IEnumerable<Aluno> ListaAlunos()

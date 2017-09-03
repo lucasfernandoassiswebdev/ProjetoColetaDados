@@ -5,6 +5,7 @@ namespace Coleta.Aplicacao.AlunoApp
 {
     public interface IAlunoAplicacao
     {
+        void InsereAluno(Aluno aluno);
         IEnumerable<Aluno> ExibeDados();
         IEnumerable<Aluno> ListaAlunos();
         IEnumerable<Aluno> ListaFaixasEtarias();

@@ -7,8 +7,45 @@
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: -3.65%;
+            overflow: hidden;
+            background-color: #333;
+            color: red;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: #111;
+                }
+    </style>
 </head>
+
 <body>
+    <ul>
+        <li>@Html.ActionLink("Tratar e transferir dados", "../Home/TransfereBaseSegura")</li>
+        <li>@Html.ActionLink("Inicio", "../Home")</li>
+        <li>@Html.ActionLink("Faixas etárias", "../")</li>
+        <li>@Html.ActionLink("Estados civis", "../")</li>
+        <li>@Html.ActionLink("Filhos", "../")</li>
+        <li>@Html.ActionLink("Cidades", "../")</li>
+    </ul>
     @RenderBody()
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
