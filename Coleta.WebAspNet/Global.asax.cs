@@ -1,4 +1,5 @@
 ﻿using Coleta.WebAspNet.Simple_Injector;
+using SimpleInjector.Integration.Web.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,8 @@ namespace Coleta.WebAspNet
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DependencyResolver.SetResolver(
-               new SimpleInjectorDependencyResolver(SimpleInjectorContainer.RegisterServices())
-           );
+                new SimpleInjectorDependencyResolver(SimpleInjectorContainer.RegisterServices())
+            );
         }
     }
 }

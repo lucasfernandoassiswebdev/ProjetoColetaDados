@@ -7,7 +7,7 @@ namespace Coleta.Repositorios
 {
     public class AlunoRepositorioADO : IAlunoRepositorio
     {
-        public IEnumerable<Aluno> ListaAlunos()
+        public IEnumerable<Aluno> ExibeDados()
         {
             throw new NotImplementedException();
         }

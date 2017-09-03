@@ -6,6 +6,11 @@ namespace Coleta.Aplicacao.AlunoApp
 {
     public class AlunoAplicacao : IAlunoAplicacao
     {
+        public IEnumerable<Aluno> ExibeDados()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Aluno> ListaAlunos()
         {
             throw new NotImplementedException();

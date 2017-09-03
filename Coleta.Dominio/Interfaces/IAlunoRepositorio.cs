@@ -5,7 +5,7 @@ namespace Coleta.Dominio.Interfaces
 {
     public interface IAlunoRepositorio
     {
-        IEnumerable<Aluno> ListaAlunos();
+        IEnumerable<Aluno> ExibeDados();
         IEnumerable<Aluno> ListaFaixasEtarias();
         IEnumerable<Aluno> ListaEstadosCivis();
         IEnumerable<Aluno> ListaFilhos();
