@@ -16,7 +16,7 @@
 
         public string EstadoCivil { get; set; }
 
-        public int Filhos { get; set; }
+        public string Filhos { get; set; }
 
         public string Cidade { get; set; }
 
@@ -24,21 +24,21 @@
 
         public string SituacaoDomiciliar { get; set; }
 
-        public int TempoMoradia { get; set; }
+        public string TempoMoradia { get; set; }
 
         public string MoraCom { get; set; }
 
         public string Trabalha { get; set; }
 
-        public int MediaRenda { get; set; }
+        public string MediaRenda { get; set; }
 
         public string PeriodoEstudo { get; set; }
 
-        public int PessoasResidem { get; set; }
+        public string PessoasResidem { get; set; }
 
-        public int PessoasTrabalham { get; set; }
+        public string PessoasTrabalham { get; set; }
 
-        public int SomaRendas { get; set; }
+        public string SomaRendas { get; set; }
 
         public string PeriodoTrabalho { get; set; }
 
