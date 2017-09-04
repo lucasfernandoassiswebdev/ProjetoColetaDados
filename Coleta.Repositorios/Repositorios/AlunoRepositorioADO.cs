@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Coleta.Dominio.Entidades;
+﻿using Coleta.Dominio.Entidades;
 using Coleta.Dominio.Interfaces;
 using Coleta.Repositorios.Extensoes;
+using System;
+using System.Collections.Generic;
 
 namespace Coleta.Repositorios
 {
@@ -23,7 +23,7 @@ namespace Coleta.Repositorios
                             RA = r.ReadAsString("RA"),
                             Nome = r.ReadAsString("Nome"),
                             Email = r.ReadAsString("Email"),
-                            Carimbo = r.ReadAsString("Carimbo"),
+                            Carimbo = r.ReadAsDate("Carimbo"),
                             Nascimento = r.ReadAsString("Nascimento"),
                             Deficiencia = r.ReadAsString("Deficiencia"),
                             EstadoCivil = r.ReadAsString("EstadoCivil"),

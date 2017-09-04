@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 
 namespace Coleta.Repositorios.Extensoes
 {
@@ -12,6 +13,11 @@ namespace Coleta.Repositorios.Extensoes
         public static string ReadAsString(this SqlDataReader r, string name)
         {
             return r.GetString(r.GetOrdinal(name));
+        }
+
+        public static DateTime ReadAsDate(this SqlDataReader r, string name)
+        {
+            return r.GetDateTime(r.GetOrdinal(name));
         }
     }
 }

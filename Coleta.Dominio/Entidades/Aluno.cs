@@ -1,4 +1,6 @@
-﻿namespace Coleta.Dominio.Entidades
+﻿using System;
+
+namespace Coleta.Dominio.Entidades
 {
     public class Aluno
     {
@@ -8,7 +10,7 @@
 
         public string Email { get; set; }
 
-        public string Carimbo { get; set; }
+        public DateTime Carimbo { get; set; }
 
         public string Nascimento { get; set; }
 

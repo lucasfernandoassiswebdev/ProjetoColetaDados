@@ -1,6 +1,7 @@
 ﻿using Coleta.Aplicacao.AlunoApp;
 using Coleta.Dominio.Entidades;
 using OfficeOpenXml;
+using System;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
@@ -24,12 +25,6 @@ namespace Coleta.WebAspNet.Controllers
 
         public ActionResult TransfereBaseSegura()
         {
-            //variáveis que serão usadas no tratamento de dados
-            int locomocao;
-            int trabalha;
-            int periodoEstudo;
-            int periodoTrabalho;
-            
             //pegando o arquivo excel e montando os objetos
             string filePath = Server.MapPath(Url.Content("~/BaseDadosExcel/Base de Dados.xlsx"));
 
@@ -45,17 +40,17 @@ namespace Coleta.WebAspNet.Controllers
             for (int i = workSheet.Dimension.Start.Row + 1; i <= workSheet.Dimension.End.Row; i++)
             {
                 //tratando os dados para pegar as informações das colunas corretas
-                locomocao = workSheet.Cells[i, 10].ToString() == string.Empty ?  11 :  10;
-                trabalha = workSheet.Cells[i, 14].ToString() == "Sozinho" ? 15 : 19;
-                periodoEstudo = trabalha == 15 ? 17 : 22;
-                periodoTrabalho = workSheet.Cells[i, periodoEstudo].ToString() == "Matutino" ? 24 : 23;
+                var locomocao = workSheet.Cells[i, 10].ToString() == string.Empty ?  11 :  10;
+                var trabalha = workSheet.Cells[i, 14].ToString() == "Sozinho" ? 15 : 19;
+                var periodoEstudo = trabalha == 15 ? 17 : 22;
+                var periodoTrabalho = workSheet.Cells[i, periodoEstudo].ToString() == "Matutino" ? 24 : 23;
 
-                Aluno aluno = new Aluno()
+                var aluno = new Aluno()
                 {
                     RA = workSheet.Cells[i, 4].Value.ToString(),
                     Nome = workSheet.Cells[i, 3].Value.ToString(),
                     Email = workSheet.Cells[i, 2].Value.ToString(),
-                    Carimbo = workSheet.Cells[i, 1].Value.ToString(),
+                    Carimbo = DateTime.FromOADate(Convert.ToDouble(workSheet.Cells[i, 1].Value)),
                     Nascimento = workSheet.Cells[i, 5].Value.ToString(),
                     Deficiencia = workSheet.Cells[i, 6].Value.ToString(),
                     EstadoCivil = workSheet.Cells[i, 7].Value.ToString(),
@@ -65,29 +60,21 @@ namespace Coleta.WebAspNet.Controllers
                     SituacaoDomiciliar = workSheet.Cells[i, 12].Value.ToString(),
                     TempoMoradia = workSheet.Cells[i, 13].Value.ToString(),
                     MoraCom = workSheet.Cells[i, 14].Value.ToString(),
+                    MediaRenda = workSheet.Cells[i, 16].Value?.ToString() ?? "0",
+                    Linguas = workSheet.Cells[i, 29].Value?.ToString() ?? "nenhuma",
                     Trabalha = workSheet.Cells[i, trabalha].Value.ToString(),
-                    MediaRenda = workSheet.Cells[i, 16].Value.ToString(),
                     PeriodoEstudo = workSheet.Cells[i, periodoEstudo].Value.ToString(),
                     PessoasResidem = workSheet.Cells[i, 18].Value.ToString(),
                     PessoasTrabalham = workSheet.Cells[i, 20].Value.ToString(),
                     SomaRendas = workSheet.Cells[i, 21].Value.ToString(),
-                    PeriodoTrabalho = workSheet.Cells[i, periodoTrabalho].Value.ToString(),
+                    PeriodoTrabalho = workSheet.Cells[i, periodoTrabalho].Value?.ToString() ?? "não trabalha",
                     VidaEscolar = workSheet.Cells[i, 25].Value.ToString(),
                     ConhecimentoInformatica = workSheet.Cells[i, 26].Value.ToString(),
                     MotivoVestibular = workSheet.Cells[i, 27].Value.ToString(),
                     ConhecimentoLingua = workSheet.Cells[i, 28].Value.ToString(),
-                    Linguas = workSheet.Cells[i, 29].Value.ToString(),
                     Meio = workSheet.Cells[i, 30].Value.ToString()
                 };
-
-                if (aluno.MediaRenda == null)
-                {
-                    aluno.MediaRenda = "0";
-                }
-                if (aluno.Linguas == null) {
-                    aluno.Linguas = "nenhuma";
-                }
-
+                
                 _appAlunos.InsereAluno(aluno);
             }
 
