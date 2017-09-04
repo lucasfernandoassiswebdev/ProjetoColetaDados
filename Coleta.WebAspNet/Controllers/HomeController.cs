@@ -10,7 +10,7 @@ namespace Coleta.WebAspNet.Controllers
     public class HomeController : Controller
     {
         private readonly IAlunoAplicacao _appAlunos;
-        
+       
         public HomeController(IAlunoAplicacao aluno)
         {
             _appAlunos = aluno;
@@ -24,7 +24,7 @@ namespace Coleta.WebAspNet.Controllers
 
         public ActionResult TransfereBaseSegura()
         {
-           //variáveis que serão usadas no tratamento de dados
+            //variáveis que serão usadas no tratamento de dados
             int locomocao;
             int trabalha;
             int periodoEstudo;
@@ -48,9 +48,9 @@ namespace Coleta.WebAspNet.Controllers
                 locomocao = workSheet.Cells[i, 10].ToString() == string.Empty ?  11 :  10;
                 trabalha = workSheet.Cells[i, 14].ToString() == "Sozinho" ? 15 : 19;
                 periodoEstudo = trabalha == 15 ? 17 : 22;
-                periodoTrabalho = workSheet.Cells[i, periodoEstudo].ToString() == "Matutino" ? 23 : 24;
+                periodoTrabalho = workSheet.Cells[i, periodoEstudo].ToString() == "Matutino" ? 24 : 23;
 
-                var aluno = new Aluno()
+                Aluno aluno = new Aluno()
                 {
                     RA = workSheet.Cells[i, 4].Value.ToString(),
                     Nome = workSheet.Cells[i, 3].Value.ToString(),
@@ -83,6 +83,9 @@ namespace Coleta.WebAspNet.Controllers
                 if (aluno.MediaRenda == null)
                 {
                     aluno.MediaRenda = "0";
+                }
+                if (aluno.Linguas == null) {
+                    aluno.Linguas = "nenhuma";
                 }
 
                 _appAlunos.InsereAluno(aluno);
