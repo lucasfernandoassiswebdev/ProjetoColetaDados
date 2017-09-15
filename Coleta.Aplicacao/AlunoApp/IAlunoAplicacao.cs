@@ -7,19 +7,8 @@ namespace Coleta.Aplicacao.AlunoApp
     {
         void InsereAluno(Aluno aluno);
         IEnumerable<Aluno> ExibeDados();
-        IEnumerable<Aluno> ListaAlunos();
-        IEnumerable<Aluno> ListaFaixasEtarias();
-        IEnumerable<Aluno> ListaEstadosCivis();
-        IEnumerable<Aluno> ListaFilhos();
-        IEnumerable<Aluno> ListaResidencias();
-        IEnumerable<Aluno> ListaMeiosLocomocao();
-        IEnumerable<Aluno> ListaComQuemMora();
-        IEnumerable<Aluno> ListaComposisaoFamiliar();
-        IEnumerable<Aluno> ListaAtividadeRemuneradaFamliar();
-        IEnumerable<Aluno> ListaRendaFamiliar();
-        IEnumerable<Aluno> ListaAreasTrabalho();
-        IEnumerable<Aluno> ListaVidaEscolarLocomocao();
-        IEnumerable<Aluno> ListaConhecimentoInformatica();
-        IEnumerable<Aluno> ListaIdiomas();
+        void ExcluiAlunoIgual(Aluno aluno);
+        int VerificaAlunoIgual(Aluno aluno);
+        void ExcluiTodos();
     }
 }

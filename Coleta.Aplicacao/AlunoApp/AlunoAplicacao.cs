@@ -14,6 +14,16 @@ namespace Coleta.Aplicacao.AlunoApp
             _appAlunos = alunos;
         }
 
+        public void ExcluiAlunoIgual(Aluno aluno)
+        {
+            _appAlunos.ExcluiAlunoIgual(aluno);
+        }
+
+        public void ExcluiTodos()
+        {
+            _appAlunos.ExcluiTodos();
+        }
+
         public IEnumerable<Aluno> ExibeDados()
         {
             return _appAlunos.ExibeDados();
@@ -24,74 +34,9 @@ namespace Coleta.Aplicacao.AlunoApp
             _appAlunos.InsereAluno(aluno);
         }
 
-        public IEnumerable<Aluno> ListaAlunos()
+        public int VerificaAlunoIgual(Aluno aluno)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaAreasTrabalho()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaAtividadeRemuneradaFamliar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaComposisaoFamiliar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaComQuemMora()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaConhecimentoInformatica()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaEstadosCivis()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaFaixasEtarias()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaFilhos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaIdiomas()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaMeiosLocomocao()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaRendaFamiliar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaResidencias()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaVidaEscolarLocomocao()
-        {
-            throw new NotImplementedException();
+            return _appAlunos.VerificaAlunoIgual(aluno);
         }
     }
 }

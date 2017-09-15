@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+}
+
+<h2 class="text-center">Enviar planilha</h2>
+<input type="file" style="margin-left:40%" id="planilha"/>
+<br/>
+<button style="margin-left:47%" href>Enviar</button>
+<script>
+    $('#planilha').change(function () {
+        readURL(this);
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var caminhoPassado = e.target.result;
+                console.log(caminhoPassado);
+            }
+        }
+    }
+
+</script>
+

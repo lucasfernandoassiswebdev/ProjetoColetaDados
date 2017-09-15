@@ -11,7 +11,7 @@ namespace Coleta.WebAspNet.Controllers
     public class HomeController : Controller
     {
         private readonly IAlunoAplicacao _appAlunos;
-       
+
         public HomeController(IAlunoAplicacao aluno)
         {
             _appAlunos = aluno;
@@ -25,6 +25,7 @@ namespace Coleta.WebAspNet.Controllers
 
         public ActionResult TransfereBaseSegura()
         {
+            _appAlunos.ExcluiTodos();
             //pegando o arquivo excel e montando os objetos
             string filePath = Server.MapPath(Url.Content("~/BaseDadosExcel/Base de Dados.xlsx"));
 
@@ -36,11 +37,11 @@ namespace Coleta.WebAspNet.Controllers
 
             package = new ExcelPackage(new FileInfo(filePath));
             workSheet = package.Workbook.Worksheets.First();
-            
+
             for (int i = workSheet.Dimension.Start.Row + 1; i <= 51; i++)
             {
                 //tratando os dados para pegar as informações das colunas corretas
-                var locomocao = workSheet.Cells[i, 10].Value == null ?  11 :  10;
+                var locomocao = workSheet.Cells[i, 10].Value == null ? 11 : 10;
                 var trabalha = workSheet.Cells[i, 14].Value.ToString() == "Sozinho" ? 15 : 19;
                 var periodoEstudo = trabalha == 15 ? 17 : 22;
                 var periodoTrabalho = workSheet.Cells[i, periodoEstudo].ToString() == "Matutino" ? 24 : 23;
@@ -64,7 +65,7 @@ namespace Coleta.WebAspNet.Controllers
                     Linguas = workSheet.Cells[i, 29].Value?.ToString() ?? "nenhuma",
                     Trabalha = workSheet.Cells[i, trabalha].Value.ToString(),
                     PeriodoEstudo = workSheet.Cells[i, periodoEstudo].Value.ToString(),
-                    PessoasResidem = workSheet.Cells[i, 18].Value?.ToString() ?? "0",
+                    PessoasResidem = workSheet.Cells[i, 18].Value?.ToString() ?? "1",
                     PessoasTrabalham = workSheet.Cells[i, 20].Value?.ToString() ?? "1",
                     SomaRendas = workSheet.Cells[i, 21].Value?.ToString() ?? "0",
                     PeriodoTrabalho = workSheet.Cells[i, periodoTrabalho].Value?.ToString() ?? "não trabalha",
@@ -74,13 +75,21 @@ namespace Coleta.WebAspNet.Controllers
                     ConhecimentoLingua = workSheet.Cells[i, 28].Value.ToString(),
                     Meio = workSheet.Cells[i, 30].Value?.ToString() ?? "Web"
                 };
-                
-                _appAlunos.InsereAluno(aluno);
+
+                if (aluno.Nome != "Teste")
+                {
+                    _appAlunos.InsereAluno(aluno);
+                }
             }
 
             package.Dispose();
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Graficos()
+        {
+            return View();
         }
     }
 }

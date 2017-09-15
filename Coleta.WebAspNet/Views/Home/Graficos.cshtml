@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="pt-BR">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!--css-->
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <link rel="stylesheet" href="~/Content/normalize.css">
+    <link rel="stylesheet" href="~/Content/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.min.js"></script>
+
+    <!--scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Perfil Socioeconômico</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="container clearfix">
+                <h1>Perfil Socioeconômico</h1>
+            </div>
+        </header>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="container clearfix">
+                        <div class="third widget doughnut">
+                            <h3>Estado Cívil</h3>
+                            <div class="canvas-container">
+                                <canvas id="grafico1" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico1").getContext('2d');
+                                    var myChart = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Solteiro", "Casado", "Outro"],
+                                            datasets: [{
+                                                data: [45, 2, 2],
+                                                backgroundColor: [
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                                <span class="status"></span>
+                            </div>
+                        </div>
+                        <div class="third widget line">
+                            <div class="chart-legend">
+                                <h3>Filhos</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico2" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico2").getContext('2d');
+                                    var Chart2 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Não possuem filhos", "Possuem filhos"],
+                                            datasets: [{
+                                                data: [45, 4],
+                                                backgroundColor: [
+                                                    'rgba(33, 47, 61, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)'
+
+                                                ],
+                                                borderColor: [
+                                                    'rgba(33, 47, 61,1)',
+                                                    'rgba(54, 162, 235, 1)'
+
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="third widget">
+                            <div class="chart-legend">
+                                <h3>Cidade em que residem</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico3" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico3").getContext('2d');
+                                    var Chart3 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Reside em Franca", "Região de Franca"],
+                                            datasets: [{
+                                                data: [47, 2],
+                                                backgroundColor: [
+                                                    'rgba(123, 36, 28, 0.2)',
+                                                    'rgba(99, 57, 116, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(123, 36, 28,1)',
+                                                    'rgba(99, 57, 116, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container clearfix">
+                        <div class="third widget doughnut">
+                            <h3>Meio de Locomoção</h3>
+                            <div class="canvas-container">
+                                <canvas id="grafico4" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico4").getContext('2d');
+                                    var Chart4 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Moto", "Carro", "Ônibus", "Bicicleta", "Andando"],
+                                            datasets: [{
+                                                data: [15, 16, 14, 1, 3],
+                                                backgroundColor: [
+                                                    'rgba(212, 172, 13, 0.2)',
+                                                    'rgba(21, 67, 96, 0.2)',
+                                                    'rgba(74, 35, 90, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(205, 97, 85, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(212, 172, 13,1)',
+                                                    'rgba(21, 67, 96, 1)',
+                                                    'rgba(74, 35, 90, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(205, 97, 85, 1)'
+
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                                <span class="status"></span>
+                            </div>
+                        </div>
+                        <div class="third widget line">
+                            <div class="chart-legend">
+                                <h3>Moradia</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico5" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico5").getContext('2d');
+                                    var Chart5 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Próprio", "Alugado", "Financiado"],
+                                            datasets: [{
+                                                data: [38, 6, 5],
+                                                backgroundColor: [
+                                                    'rgba(255, 0, 35, 0.2)',
+                                                    'rgba(100, 117, 243, 0.2)',
+                                                    'rgba(27, 100, 106, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 0, 35,1)',
+                                                    'rgba(100, 117, 243, 1)',
+                                                    'rgba(27, 100, 106, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="third widget">
+                            <div class="chart-legend">
+                                <h3>Tempo de Moradia</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico6" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+
+                                    var ctx = document.getElementById("grafico6").getContext('2d');
+                                    var Chart6 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["1 ano", "2 anos", "3 anos", "4 anos ou mais"],
+                                            datasets: [{
+                                                data: [5, 3, 3, 38],
+                                                backgroundColor: [
+                                                    'rgba(144, 4, 4, 0.2)',
+                                                    'rgba(211, 96, 0, 0.2)',
+                                                    'rgba(206, 13, 89, 0.2)',
+                                                    'rgba(106, 65, 27, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(44, 4, 4,1)',
+                                                    'rgba(211, 96, 0, 1)',
+                                                    'rgba(206, 13, 89, 1)',
+                                                    'rgba(106, 65, 27, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container clearfix">
+                        <div class="third widget doughnut">
+                            <h3>Com quem mora</h3>
+                            <div class="canvas-container">
+                                <canvas id="grafico7" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico7").getContext('2d');
+                                    var Chart7 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Família", "Sozinho", "Republica"],
+                                            datasets: [{
+                                                data: [45, 3, 1],
+                                                backgroundColor: [
+                                                    'rgba(13, 206, 200, 0.2)',
+                                                    'rgba(98, 247, 28, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(13, 206, 200,1)',
+                                                    'rgba(98, 247, 28, 1)',
+                                                    'rgba(255, 206, 86, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                                <span class="status"></span>
+                            </div>
+                        </div>
+                        <div class="third widget line">
+                            <div class="chart-legend">
+                                <h3>Atividade remunerada</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico8" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico8").getContext('2d');
+                                    var Chart8 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Nunca trabalhei", "Sim. Trabalho na área do curso", "Não. Já trabalhei na área do curso", "Sim. Trabalho fora da área do curso", "Não. Nunca trabalhei na área do curso."],
+                                            datasets: [{
+                                                data: [6, 11, 2, 20, 10],
+                                                backgroundColor: [
+                                                    'rgba(97, 143, 143, 0.2)',
+                                                    'rgba(206, 77, 219, 0.2)',
+                                                    'rgba(4, 35, 30, 0.2)',
+                                                    'rgba(65, 44, 144, 0.2)',
+                                                    'rgba(52, 62, 25, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(97, 143, 143,1)',
+                                                    'rgba(206, 77, 219, 1)',
+                                                    'rgba(4, 35, 30, 1)',
+                                                    'rgba(65, 44, 144, 1)',
+                                                    'rgba(52, 62, 25, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="third widget">
+                            <div class="chart-legend">
+                                <h3>Periodo</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico9" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico9").getContext('2d');
+                                    var Chart9 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Matutino", "Noturno"],
+                                            datasets: [{
+                                                data: [23, 26],
+                                                backgroundColor: [
+                                                    'rgba(94, 60, 194, 0.2)',
+                                                    'rgba(194, 60, 163, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(94, 60, 194,1)',
+                                                    'rgba(194, 60, 163, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container clearfix">
+                        <div class="third widget doughnut">
+                            <h3>Pessoas que residem com você</h3>
+                            <div class="canvas-container">
+                                <canvas id="grafico10" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico10").getContext('2d');
+                                    var Chart7 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["1 pessoa", "2 pessoas", "3 pessoas", "4 ou mais"],
+                                            datasets: [{
+                                                data: [2, 7, 14, 23],
+                                                backgroundColor: [
+                                                    'rgba(205, 97, 85, 0.2)',
+                                                    'rgba(74, 35, 90, 0.2)',
+                                                    'rgba(212, 172, 13, 0.2)',
+                                                    'rgba(21, 67, 96, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(205, 97, 85,1)',
+                                                    'rgba(74, 35, 90, 1)',
+                                                    'rgba(212, 172, 13, 1)',
+                                                    'rgba(21, 67, 96, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                                <span class="status"></span>
+                            </div>
+                        </div>
+                        <div class="third widget line">
+                            <div class="chart-legend">
+                                <h3>Atividade remunerada familiar(Quantidade)</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico11" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico11").getContext('2d');
+                                    var Chart8 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["1 pessoa", "2 pessoas", "3 pessoas", "4 ou mais"],
+                                            datasets: [{
+                                                data: [12, 15, 12, 7],
+                                                backgroundColor: [
+                                                    'rgba(21, 67, 96, 0.2)',
+                                                    'rgba(96, 50, 21, 0.2)',
+                                                    'rgba(30, 96, 21, 0.2)',
+                                                    'rgba(123, 36, 28, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(21, 67, 96,1)',
+                                                    'rgba(96, 50, 21, 1)',
+                                                    'rgba(30, 96, 21, 1)',
+                                                    'rgba(123, 36, 28, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="third widget">
+                            <div class="chart-legend">
+                                <h3>Escolaridade</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico12" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico12").getContext('2d');
+                                    var Chart9 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Integralmente em Escola Pública", "Maior parte em Escola Pública", "Integralmente em Escola Particular", "Maior parte em Escola Particular"],
+                                            datasets: [{
+                                                data: [43, 3, 2, 1],
+                                                backgroundColor: [
+                                                    'rgba(255,59,63, 0.2)',
+                                                    'rgba(16,64,128, 0.2)',
+                                                    'rgba(61,243,18, 0.2)',
+                                                    'rgba(0,150,150, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255,59,63,1)',
+                                                    'rgba(16,64,128, 1)',
+                                                    'rgba(61,243,18, 1)',
+                                                    'rgba(0,150,150, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container clearfix">
+                        <div class="third widget doughnut">
+                            <h3>Conhecimento em informática</h3>
+                            <div class="canvas-container">
+                                <canvas id="grafico13" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico13").getContext('2d');
+                                    var Chart7 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Avançado", "Básico", "Intermediário"],
+                                            datasets: [{
+                                                data: [18, 4, 27],
+                                                backgroundColor: [
+                                                    'rgba(10, 245, 153, 0.2)',
+                                                    'rgba(140, 103, 176, 0.2)',
+                                                    'rgba(188, 227, 26, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(10, 245, 153,1)',
+                                                    'rgba(140, 103, 176, 1)',
+                                                    'rgba(188, 227, 26, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                                <span class="status"></span>
+                            </div>
+                        </div>
+                        <div class="third widget line">
+                            <div class="chart-legend">
+                                <h3>Porque escolheram a FATEC</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico14" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico14").getContext('2d');
+                                    var Chart8 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Interesse na área", "Gratuidade", "Para obter alguma certificação", "Experiência Profissional", "Outro"],
+                                            datasets: [{
+                                                data: [29, 9, 2, 7, 2],
+                                                backgroundColor: [
+                                                    'rgba(38,0,38, 0.2)',
+                                                    'rgba(52, 73, 94, 0.2)',
+                                                    'rgba(17, 122, 101, 0.2)',
+                                                    'rgba(110, 44, 0, 0.2)',
+                                                    'rgba(41, 128, 185, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(38,0,38,1)',
+                                                    'rgba(52, 73, 94, 1)',
+                                                    'rgba(17, 122, 101, 1)',
+                                                    'rgba(110, 44, 0, 1)',
+                                                    'rgba(41, 128, 185, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="third widget">
+                            <div class="chart-legend">
+                                <h3>Conhecimento em Língua estrangeira</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico15" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico15").getContext('2d');
+                                    var Chart9 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Sim", "Não"],
+                                            datasets: [{
+                                                data: [35, 14],
+                                                backgroundColor: [
+                                                    'rgba(0,96,109, 0.2)',
+                                                    'rgba(106,12,255, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(0,96,109,1)',
+                                                    'rgba(106,12,255, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container clearfix">
+                        <div class="third widget doughnut">
+                            <h3>Quais línguas</h3>
+                            <div class="canvas-container">
+                                <canvas id="grafico16" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico16").getContext('2d');
+                                    var Chart7 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Inglês", "Inglês, Espanhol", "Inglês, Espanhol, Outros", "Espanhol"],
+                                            datasets: [{
+                                                data: [23, 8, 1, 2],
+                                                backgroundColor: [
+                                                    'rgba(152,55,85, 0.2)',
+                                                    'rgba(236,194,255, 0.2)',
+                                                    'rgba(50,46,161, 0.2)',
+                                                    'rgba(8,163,167, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(152,55,85,1)',
+                                                    'rgba(236,194,255, 1)',
+                                                    'rgba(50,46,161, 1)',
+                                                    'rgba(8,163,167, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                                <span class="status"></span>
+                            </div>
+                        </div>
+                        <div class="third widget line">
+                            <div class="chart-legend">
+                                <h3>Questionário</h3>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="grafico17" width="200" height="200"></canvas>
+                                <script type="text/javascript">
+                                    var ctx = document.getElementById("grafico17").getContext('2d');
+                                    var Chart8 = new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ["Web", "App"],
+                                            datasets: [{
+                                                data: [47, 1],
+                                                backgroundColor: [
+                                                    'rgba(10,13,39, 0.2)',
+                                                    'rgba(137,137,176, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(10,13,39,1)',
+                                                    'rgba(137,137,176, 1)'
+                                                ],
+                                                borderWidth: 2
+                                            }]
+                                        },
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -10,6 +10,31 @@ namespace Coleta.Repositorios
     {
         private Contexto.Contexto contexto;
 
+        public int VerificaAlunoIgual(Aluno aluno)
+        {
+            using (contexto = new Contexto.Contexto())
+            {
+                var cmd = contexto.ExecutaComando("VerificaAluno");
+                cmd.Parameters.AddWithValue("@RA", aluno.RA);
+                cmd.Parameters.AddWithValue("@Nome", aluno.Nome);
+
+                using (var r = cmd.ExecuteReader())
+                    if (r.Read())
+                        return 1;
+                return 0;
+            }
+        }
+
+        public void ExcluiAlunoIgual(Aluno aluno)
+        {
+            using (contexto = new Contexto.Contexto())
+            {
+                var cmd = contexto.ExecutaComando("ExcluirAluno");
+                cmd.Parameters.AddWithValue("@RA", aluno.RA);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public IEnumerable<Aluno> ExibeDados()
         {
             using (contexto = new Contexto.Contexto())
@@ -88,74 +113,13 @@ namespace Coleta.Repositorios
             }
         }
 
-        public IEnumerable<Aluno> ListaAreasTrabalho()
+        public void ExcluiTodos()
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaAtividadeRemuneradaFamliar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaComposisaoFamiliar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaComQuemMora()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaConhecimentoInformatica()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaDeficiencias()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaEstadosCivis()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaFaixasEtarias()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaFilhos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaIdiomas()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaMeiosLocomocao()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaRendaFamiliar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaResidencias()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Aluno> ListaVidaEscolarLocomocao()
-        {
-            throw new NotImplementedException();
+            using (contexto = new Contexto.Contexto())
+            {
+                var cmd = contexto.ExecutaComando("ExcluiTodos");
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }
